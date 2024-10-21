@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Scraper</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram Scraper</h1>
+        <form action="{% url 'index' %}" method="GET">
+
+            <label for="username">Enter Instagram username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Search</button>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+
+
