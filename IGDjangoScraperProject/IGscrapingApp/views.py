@@ -6,8 +6,8 @@ from .instagram_scraper import get_combined_instagram_data
 def index(request):
     scraped_data = None  # Initialize scraped_data to None
 
-    if request.method == 'GET' and 'username' in request.GET:
-        username = request.GET['username']
+    if request.method == 'GET' and 'display_name' in request.GET:
+        username = request.GET.get('display_name')
         
         # Fetch the Instagram profile data
         scraped_data = get_combined_instagram_data(username)

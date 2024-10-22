@@ -8,19 +8,28 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/script.js' %}"></script>
 </head>
+
+
+ 
 <body>
     <div class="container">
         <h1>Instagram Scraper</h1>
-        <form action="{% url 'index' %}" method="GET">
-
-            <label for="username">Enter Instagram username:</label>
-            <input type="text" id="username" name="username" required>
-            <button type="submit">Search</button>
-            
+        <form method="GET" action="">
+            <input type="text" name="display_name" placeholder="Search Profile" required>
+            <button type="submit">Scrape</button>
         </form>
+
+        {% if scraped_data %}
+        <div class="results">
+            <h3>Scraped Data:</h3>
+            <p><strong>Username:</strong> {{ scraped_data.scraped_data.username }}</p>
+            <p><strong>Display Name:</strong> {{ scraped_data.scraped_data.display_name }}</p>
+            <p><strong>Bio:</strong> {{ scraped_data.scraped_data.bio }}</p>
+            <p><strong>Profile URL:</strong> <a href="{{ scraped_data.scraped_data.profile_url }}" target="_blank">{{ scraped_data.scraped_data.profile_url }}</a></p>
+        </div>
+        {% endif %}
     </div>
 </body>
 </html>
-
 
 

@@ -1,32 +1,124 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
+/* Container */
 .container {
-    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    padding: 2rem;
+    
+    border-radius: 10px;
+    
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Input Field */
 input[type="text"] {
     padding: 10px;
-    width: 250px;
-    margin-right: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+/* Input Focus State */
+input[type="text"]:focus {
+    border-color: #6CB2B0;
+    outline: none;
+    box-shadow: 0 0 10px rgba(108, 178, 176, 0.5);
+}
+
+/* Button */
 button {
     padding: 10px;
-    background-color: #6CB2B0;
-    color: white;
+    font-size: 1.2rem;
+    background-color: #0B3040;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+/* Button Hover State */
 button:hover {
-    background-color: #0B3040;
+    background-color: #6CB2B0;
+}
+
+/* Results Section */
+.results {
+    background-color: #f4f6f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: slideIn 0.8s ease;
+}
+
+/* Headings */
+h1, h3 {
+    text-align: center;
+    color: #0B3040;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Profile URL Link */
+a {
+    color: #6CB2B0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0B3040;
+    text-decoration: underline;
+}
+
+/* Animations */
+
+/* Fade In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide In Effect for Results */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
