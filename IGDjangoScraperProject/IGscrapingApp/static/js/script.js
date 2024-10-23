@@ -91,3 +91,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+const searchInput = document.getElementById('search-input');
+const clearIcon = document.getElementById('clear-icon');
+
+// Show the clear icon if there's text in the input
+searchInput.addEventListener('input', function() {
+    clearIcon.style.display = searchInput.value ? 'block' : 'none';
+});
+
+// Clear the input field when the clear icon is clicked
+clearIcon.addEventListener('click', function() {
+    searchInput.value = ''; // Clear the input field
+    clearIcon.style.display = 'none'; // Hide the clear icon
+    searchInput.focus(); // Optional: keep the focus on the input
+});
